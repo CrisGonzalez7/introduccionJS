@@ -142,16 +142,16 @@ const productoObj = {
     nombreObj: "Monitor",
     precio: 300,
     disponible: true
-}
+};
 
 console.log(productoObj);
 console.log('Nombre Producto: ', productoObj.nombreObj);
-console.log('Precio Monitor: ', productoObj.precio)
-console.log('Disponible: ', productoObj.disponible)
+console.log('Precio Monitor: ', productoObj.precio);
+console.log('Disponible: ', productoObj.disponible);
 
 // Otra sintaxis
 console.log('%cOtra sintaxis', 'color:yellow');
-console.log('Precio: ', productoObj["precio"])
+console.log('Precio: ', productoObj["precio"]);
 
 // Anadiendo nueva propiedad
 
@@ -182,15 +182,15 @@ console.log('%cDestructuring', 'color:yellow');
 const { precio, nombreObj } = productoObj;
 
 console.log('Precio: ', precio);
-console.log('Nombre producto: ', nombreObj)
+console.log('Nombre producto: ', nombreObj);
 
 // Congela objeto
 
 console.log('%cObject Freeze', 'color:yellow');
 
-Object.freeze(productoObj)
+Object.freeze(productoObj);
 
-console.log('El objeto productoObj está congelado: ', Object.isFrozen(productoObj))
+console.log('El objeto productoObj está congelado: ', Object.isFrozen(productoObj));
 
 /* Al intentar añadir una nueva propiedad al objeto, lanza un error. 
 Probar descomentando la siguiente linea */
@@ -205,7 +205,7 @@ const productoSeal = {
     nombreSeal: "Monitor",
     precio: 300,
     disponible: true
-}
+};
 
 Object.seal(productoSeal);
 
@@ -235,17 +235,74 @@ const productoUnir = {
     nombreUnir: "Monitor",
     precio: 300,
     disponible: true
-}
+};
 
 console.log('Objeto uno: ', productoUnir);
 
 const medidasProducto = {
     peso: '1kg',
     pulgadas: '20 pulgadas',
-}
+};
 
 console.log('Objeto dos: ', medidasProducto);
 
 const productoUnido = {...productoUnir, ...medidasProducto };
 
 console.log('Objetos unidos: ', productoUnido);
+
+// Arreglos o Arrays
+
+console.log('%cARRAYS', 'color:#11e6e8');
+
+// Numeros
+console.log('%cArray numeros', 'color:yellow');
+
+const numeros = [10, 20, 30, 40, 50];
+
+console.log(numeros);
+console.table(numeros);
+
+// Meses
+console.log('%cArray meses', 'color:yellow');
+
+const meses = new Array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo');
+
+console.log(meses);
+console.table(meses);
+
+// Arreglo de prueba
+console.log('%cArreglo de prueba', 'color:yellow');
+
+const arregloPrueba = ['Prueba de contenido', 10, true, 'Tipos de datos', null, 'Objeto', { nombre: 'Cris', ocupacion: 'Feliz' }, 'Otro arreglo', ['Arreglo interno', 1, 2, 3]];
+
+console.log(arregloPrueba);
+console.table(arregloPrueba);
+
+// Acceder a los valores de un arreglo
+
+console.log('%cAcceder a los valores de un arreglo', 'color:yellow');
+console.log('Los arreglos parten en la posición 0');
+console.log(numeros);
+console.log('Si imprimo el valor de la posición "3" se imprimirá el "40"');
+console.log(numeros[3]);
+console.log('Si imprimo una posición inexistente, me dice que no está definida');
+console.log(numeros[100]);
+
+// Conocer la extensión de un arreglo
+console.log('%cConocer la extensión de un arreglo', 'color:yellow');
+console.log('Extensión del arreglo "meses"');
+console.log(meses.length);
+
+// Arreglo vacío
+console.log('%cSi es un arreglo vacío, la extensión dice "0"', 'color:yellow');
+
+const arregloVacio = [];
+
+console.log(arregloVacio.length);
+
+// Acceder a todos los valores del arreglo con un iterador
+console.log('%cAcceder a todos los valores del arreglo con un iterador', 'color:yellow');
+console.log(meses);
+console.log('Imprimiendo "meses" con un iterador');
+
+meses.forEach(function(mes) { console.log(mes) });
