@@ -112,3 +112,45 @@ console.table(nuevoMeses);
 console.log('Añado elementos al comienzo del arreglo de "nuevoMeses" con un nuevo arreglo');
 const mesesInicio = ['Enero', ...nuevoMeses];
 console.table(mesesInicio);
+
+// ARRAYS METHODS
+console.log('%cARRAYS METHODS', 'color:#11e6e8');
+
+// Arreglo con Objetos
+console.log('%cArreglo con Objetos', 'color:yellow');
+
+const carrito = [
+    { nombre: 'Plancha', precio: '21 000' },
+    { nombre: 'Monitor', precio: '100 000' },
+    { nombre: 'Celular', precio: '250 000' },
+    { nombre: 'Audifonos', precio: '12 000' },
+    { nombre: 'Teclado', precio: '25 000' },
+]
+
+console.table(carrito);
+
+// forEach
+const arregloSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+
+arregloSemana.forEach(function(dia) {
+    console.log(dia);
+})
+
+arregloSemana.forEach(function(dia) {
+    if (dia == 'Terça') {
+        console.log('Terça si está en arregloSemana');
+    }
+})
+
+// Includes
+console.log('con el metodo "includes" puedo saber si un elemento se encuentra en el arreglo');
+
+console.log('Buscando un elemento existente');
+const existeTerca = arregloSemana.includes('Terça');
+console.log(existeTerca);
+
+console.log('Buscando un elemento NO existente');
+const noExiste = arregloSemana.includes('Hola');
+console.log(noExiste);
+
+/* No es una buena opción para arreglos con objetos */
