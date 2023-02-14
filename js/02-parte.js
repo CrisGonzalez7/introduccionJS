@@ -1,3 +1,6 @@
+// Ejecucion estricta: "use strict";
+"use strict";
+
 // OBJETOS
 
 console.log('%cOBJETOS', 'color:#11e6e8');
@@ -137,7 +140,7 @@ console.table(meses);
 // Arreglo de prueba
 console.log('%cArreglo de prueba', 'color:yellow');
 
-const arregloPrueba = ['Prueba de contenido', 10, true, 'Tipos de datos', null, 'Objeto', { nombre: 'Cris', ocupacion: 'Feliz' }, 'Otro arreglo', ['Arreglo interno', 1, 2, 3]];
+const arregloPrueba = ['Prueba de contenido', 10, true, 'Tipos de datos', null, 'Objeto', { nombre: 'Nombre', ocupacion: 'Ocupación' }, 'Otro arreglo', ['Arreglo interno', 1, 2, 3]];
 
 console.log(arregloPrueba);
 console.table(arregloPrueba);
@@ -175,28 +178,56 @@ meses.forEach(function(mes) { console.log(mes) });
 
 console.log('%cAñadiendo elementos al arreglo "numeros"', 'color:yellow');
 console.table(numeros);
-console.log('añado un elemento a la posición "5"');
+console.log('Añado un elemento a la posición "5"');
 // Forma poco común
 numeros[5] = 60;
 console.table(numeros);
-/* La forma anterior es poco común ya que si se utiliza en una posición ya existente modifica esa posición como podemos ver en el siguiente ejemplo (descomentar para ver):
+/* La forma anterior es poco común ya que si se utiliza en una posición ya existente modifica esa posición como podemos ver en el siguiente ejemplo (descomentar para ver): */
+/*
 numeros[2] = 70;
 console.table(numeros);
 */
 
 // Push
-console.log('usando "push" añado elementos al final del arreglo');
+console.log('Usando "push" añado elementos al final del arreglo');
 numeros.push(80);
 console.table(numeros);
-console.log('añado múltiples elementos con "push"');
+console.log('Añado múltiples elementos con "push"');
 numeros.push(90, 100)
 console.table(numeros);
 /* Sin embargo, la forma anterior está dejando de usarse ya que se recomienda no modificar los arreglos originales */
 
 // Unshift
-console.log('usando "unshift" añado elementos al comienzo del arreglo');
+console.log('Usando "unshift" añado elementos al comienzo del arreglo');
 numeros.unshift(-30, -20, -10);
 console.table(numeros);
 
 // Eliminar elementos del arreglo
-console.log('%cEliminar elementos del arreglo', 'color:yellow');
+console.log('%cEliminar elementos del arreglo "meses"', 'color:yellow');
+console.table(meses);
+console.log('Usando "pop" elimina el último elemento');
+meses.pop();
+console.table(meses);
+console.log('Usando "shift" elimina el primer elemento');
+meses.shift();
+console.table(meses);
+
+// Splice
+console.log('Eliminando elementos con el método "splice"');
+const arregloSplice = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+console.table(arregloSplice);
+// El método Splice toma dos valores, el primero es la posición del elemento que se desea eliminar basado en su índice y el segundo valor es la cantidad de elementos que se desea eliminar a partir de ahí
+arregloSplice.splice(1, 5);
+console.table(arregloSplice);
+
+/* La desventaja de todos los métodos antes mencionados es que modifican el arreglo original y últimamente la tendencia es no modificar los arreglos originales */
+
+// Rest Operator o Spread Operator
+console.log('%cRest Operator o Spread Operator', 'color:yellow');
+console.table(meses);
+console.log('Añado elementos al final del arreglo de "meses" con un nuevo arreglo');
+const nuevoMeses = [...meses, 'Mayo', 'Junio', 'Julio'];
+console.table(nuevoMeses);
+console.log('Añado elementos al comienzo del arreglo de "nuevoMeses" con un nuevo arreglo');
+const mesesInicio = ['Enero', ...nuevoMeses];
+console.table(mesesInicio);
